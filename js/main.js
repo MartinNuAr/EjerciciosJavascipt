@@ -14,7 +14,7 @@ function numeroRepetido(arreglo) {
     
 // Se declara un valor booleano por defecto para almacenar la respuesta.
     
-    let respuesta = false;
+    let respuesta = true;
 
 // Inicia un ciclo que compara el primer valor con todos los valores y después se va reocrriendo hasta acabar la lista.
 
@@ -24,17 +24,14 @@ function numeroRepetido(arreglo) {
 
                 // Si encuentra un número igual, cambia el valor de respuesta, se almacena el número y rompe el ciclo.
 
-                respuesta = true;
+                respuesta = false;
                 num = arreglo[j]
-                break;
+                console.log(`El número ${num} se encuentra más de una vez`);
             }
         }
     }
-    // Si el valor de respuesta es verdadero, arroja el mensaje con el número repetido.
+
     if (respuesta) {
-        console.log(`El número ${num} se encuentra más de una vez`);
-    }
-    else {
         console.log("No hay números repetidos");
     }  
 }
