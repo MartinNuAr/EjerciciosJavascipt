@@ -1,45 +1,19 @@
-// Ejercicio 3
+// Ejercicio 4
 
-// Escribir una función que permita saber si un número se repite dentro de un arreglo.
+// Escribir una función que tome un arreglo ordenado y devuelva un arreglo completamente desordenado.
 
-// 1. Se define el arreglo de entrada (en este ejemplo, tres casos de prueba)
+// 1. Se define el arreglo de entrada
 
-let caso1 = [1, 22, 5, 17, 10, 5, 40, 5];
-let caso2 = [7, 41, 5, 7, 10, 13, 2];
-let caso3 = [1, 22, 5, 14, 24, 31, 27, 15, 105];
+let ejemplo = [1, 2, 5, 14, 24, 31, 50, 105]
 
-// 2. Se define la función
-
-function numeroRepetido(arreglo) {
-    
-// Se declara un valor booleano por defecto para almacenar la respuesta.
-    
-    let respuesta = false;
-
-// Inicia un ciclo que compara el primer valor con todos los valores y después se va reocrriendo hasta acabar la lista.
-
-    for (let i = 0; i < arreglo.length; i++) {
-        for (let j = 0; j < arreglo.length; j++) {
-            if ((arreglo[i] == arreglo[j]) && (i != j)) {
-
-                // Si encuentra un número igual, cambia el valor de respuesta, se almacena el número y rompe el ciclo.
-
-                respuesta = true;
-                num = arreglo[j]
-                break;
-            }
-        }
+function desorden(arreglo) {
+    i = arreglo.length;
+    while (i > 0) {
+        j = Math.floor(Math.random()*i);
+        i--;
+        [arreglo[i], arreglo[j]] = [arreglo[j], arreglo[i]];
     }
-    // Si el valor de respuesta es verdadero, arroja el mensaje con el número repetido.
-    if (respuesta) {
-        console.log(`El número ${num} se encuentra más de una vez`);
-    }
-    else {
-        console.log("No hay números repetidos");
-    }  
+    return arreglo;
 }
-// Se imprimen los resultados de las funciones en la consola
 
-console.log(numeroRepetido(caso1));
-console.log(numeroRepetido(caso2));
-console.log(numeroRepetido(caso3));
+console.log(desorden(ejemplo));
