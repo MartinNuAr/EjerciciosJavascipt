@@ -1,28 +1,45 @@
-// Ejercicio 2
+// Ejercicio 3
 
-// Se define una función que tome arreglo de números y devuelva el número más pequeño de la lista.
+// Escribir una función que permita saber si un número se repite dentro de un arreglo.
 
-// 1. Se define el arreglo de entrada
+// 1. Se define el arreglo de entrada (en este ejemplo, tres casos de prueba)
 
-let arreglo = [-1, 3, 4, 2, 6];
+let caso1 = [1, 22, 5, 17, 10, 5, 40, 5];
+let caso2 = [7, 41, 5, 7, 10, 13, 2];
+let caso3 = [1, 22, 5, 14, 24, 31, 27, 15, 105];
 
-// 2. Se calcula el número menor con comparaciones en un ciclo
+// 2. Se define la función
 
-function numeroMenor(min) {
-    // 3. Se asigna el primer valor del arreglo
+function numeroRepetido(arreglo) {
+    
+// Se declara un valor booleano por defecto para almacenar la respuesta.
+    
+    let respuesta = false;
 
-    min = arreglo[0];
+// Inicia un ciclo que compara el primer valor con todos los valores y después se va reocrriendo hasta acabar la lista.
 
-    // 4. Se comienza a comparar con el segundo valor del arreglo y continúa hasta recorrer todo el ciclo
+    for (let i = 0; i < arreglo.length; i++) {
+        for (let j = 0; j < arreglo.length; j++) {
+            if ((arreglo[i] == arreglo[j]) && (i != j)) {
 
-    for (let cont = 1; cont < arreglo.length; cont++) {
-        if (min > arreglo[cont]) {
-            min = arreglo[cont];
+                // Si encuentra un número igual, cambia el valor de respuesta, se almacena el número y rompe el ciclo.
+
+                respuesta = true;
+                num = arreglo[j]
+                break;
+            }
         }
     }
-    return min;
+    // Si el valor de respuesta es verdadero, arroja el mensaje con el número repetido.
+    if (respuesta) {
+        console.log(`El número ${num} se encuentra más de una vez`);
+    }
+    else {
+        console.log("No hay números repetidos");
+    }  
 }
+// Se imprimen los resultados de las funciones en la consola
 
-// 5. Devuelve el resultado en la consola
-
-console.log(numeroMenor(arreglo));
+console.log(numeroRepetido(caso1));
+console.log(numeroRepetido(caso2));
+console.log(numeroRepetido(caso3));
