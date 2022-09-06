@@ -1,28 +1,28 @@
-// Ejercicio 1
+// Ejercicio 2
 
-// Se define una función que tome arreglo de números y devuelva el número mayor de la lista.
+// Se define una función que tome arreglo de números y devuelva el número más pequeño de la lista.
 
 // 1. Se define el arreglo de entrada
 
-let arreglo = [3, 5, 7, 1, 6];
+let arreglo = [-1, 3, 4, 2, 6];
 
-// 2. Se calcula el número mayor con comparaciones en un ciclo
+// 2. Se calcula el número menor con comparaciones en un ciclo
 
-function numeroMayor(max) {
+function numeroMenor(min) {
     // 3. Se asigna el primer valor del arreglo
 
-    max = arreglo[0];
+    min = arreglo[0];
 
     // 4. Se comienza a comparar con el segundo valor del arreglo y continúa hasta recorrer todo el ciclo
 
     for (let cont = 1; cont < arreglo.length; cont++) {
-        if (max < arreglo[cont]) {
-            max = arreglo[cont];
+        if (min > arreglo[cont]) {
+            min = arreglo[cont];
         }
     }
-    return max;
+    return min;
 }
 
 // 5. Devuelve el resultado en la consola
 
-console.log(numeroMayor(arreglo));
+console.log(numeroMenor(arreglo));
