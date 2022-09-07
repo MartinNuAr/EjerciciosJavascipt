@@ -1,6 +1,6 @@
-// Algoritmo 1
+// Algoritmo 2
 
-// 1. Solicitar 3 números (entre el 1 y el 100)  y definir cual es el mayor
+// 1. Solicitar 3 números (entre el 1 y el 100)  y definir cual es el menor
 
 
 
@@ -22,12 +22,12 @@ btnRes.addEventListener("click", function (e) {
         flag = false;
     }
 
-    let max = n1;
-    if (max < n3) {
-            max = n3;
+    let min = n1;
+    if (min > n3) {
+            min = n3;
         }
-    if (max < n2) {
-            max = n2;
+    if (min > n2) {
+            min = n2;
         }
     
 
@@ -44,7 +44,7 @@ btnRes.addEventListener("click", function (e) {
         flag = false;
     }
     if (flag) {
-        res.innerHTML = `El número mayor es ${max}`;
+        res.innerHTML = `El número menor es ${min}`;
     }
 
     }
