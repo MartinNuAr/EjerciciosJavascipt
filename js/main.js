@@ -1,6 +1,6 @@
-// Algoritmo 2
+// Algoritmo 5
 
-// 1. Solicitar 3 números (entre el 1 y el 100)  y definir cual es el menor
+// Elaborar un algoritmo para leer 3 números y determinar sí uno es la suma de los otros
 
 
 
@@ -14,7 +14,6 @@ btnRes.addEventListener("click", function (e) {
     let n2 = parseInt(document.getElementById("numero2").value);
     let n3 = parseInt(document.getElementById("numero3").value);
     let res = document.getElementById("respuesta");
-    let flag = true;
 
     res.innerHTML = "";
     if (isNaN(n1) || isNaN(n2) || isNaN(n3)) {
@@ -22,30 +21,17 @@ btnRes.addEventListener("click", function (e) {
         flag = false;
     }
 
-    let min = n1;
-    if (min > n3) {
-            min = n3;
-        }
-    if (min > n2) {
-            min = n2;
-        }
-    
-
-    if (n1 < 1 || n1 > 100) {
-        res.innerHTML += `El número ${n1} no se encuentra en el rango especificado<br>`;
-        flag = false;
+    if (n1 == (n2+ n3)) {
+        res.innerHTML = `El número ${n1} es igual ${n2} + ${n3}`;
     }
-    if (n2 < 1 || n2 > 100) {
-        res.innerHTML += `El número ${n2} no se encuentra en el rango especificado<br>`;
-        flag = false;
+    else if (n2 == (n1+ n3)) {
+        res.innerHTML = `El número ${n2} es igual ${n1} + ${n3}`;
     }
-    if (n3 < 1 || n3 > 100) {
-        res.innerHTML += `El número ${n3} no se encuentra en el rango especificado<br>`;
-        flag = false;
+    else if (n3 == (n2+ n1)) {
+        res.innerHTML = `El número ${n3} es igual ${n1} + ${n2}`;
     }
-    if (flag) {
-        res.innerHTML = `El número menor es ${min}`;
+    else{
+        res.innerHTML = `No existe ningún número que sea la suma de los otros dos`;
     }
-
     }
 );
